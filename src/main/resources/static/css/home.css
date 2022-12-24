@@ -1,0 +1,228 @@
+/* ====================== ALL ====================== */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #eee;
+    font-family: 'Rubik', sans-serif;
+}
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* ====================== HEADER ====================== */
+.header{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0,0,0, 0.1);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    transition: all .9s;
+    z-index: 2;
+}
+.header-main{
+    display: flex;
+}
+.header a{
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+    color: #000;
+    transition: 0.5s;
+}
+.menu-header__link, .logo{
+    padding: 26px 15px;
+}
+.action{
+    padding: 15px 15px;
+}
+
+/* ====================== BURGER MENU ====================== */
+.burger__menu{
+    display: none;
+}
+/*ACTIONS*/
+.header-actions{
+    display: flex;
+}
+
+/* ====================== HEADER HOVER ====================== */
+.action:hover{
+    background-color: rgba(159, 156, 156, 0.9);
+}
+.menu-header__link:hover{
+    background-color: rgba(159, 156, 156, 0.9);
+}
+
+
+/* ====================== HOME PAGE ====================== */
+/* ====================== SLIDER ====================== */
+.slider{
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+}
+.slider-line{
+    display: flex;
+    transition: all ease 1.5s;
+}
+.slider-next, .slider-prev{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+}
+.slider-next{
+    right: 0;
+}
+.slider-next:hover, .slider-prev:hover{
+    color: #BEBEBEE5;
+}
+.slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ====================== BUTTON ====================== */
+.btn__about-slide{
+    position: absolute;
+    display: inline-block;
+    --width: 210px;
+    --height: 70px;
+    --begin: white;
+    --end: black;
+     width: var(--width);
+    height: var(--height);
+    line-height: var(--height);
+    color: black;
+    text-align: center;
+    letter-spacing: 5px;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: 2s;
+}
+
+.button__svg,
+.button__rect{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: none;
+}
+.button__rect{
+    stroke: var(--begin);
+    stroke-width: 5;
+    stroke-dasharray: var(--height) var(--width);
+    stroke-dashoffset: calc(
+        2 * var(--width)
+        + 2 * var(--height)
+        + var(--height) / 2
+    );
+    transition: 2s;
+}
+.btn__about-slide:hover .button__rect,
+.btn__about-slide:focus .button__rect{
+    stroke: var(--end);
+    stroke-dashoffset: calc(var(--height) + var(--height) / 2);
+}
+.btn__about-slide:hover{
+    outline: none;
+    color: white;
+}
+
+/* ====================== ABOUT ====================== */
+section{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section2{
+    margin-top: 65px;
+    height: 250px;
+    background-color: darkgrey;
+}
+.section2 .container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text{
+    max-width: 50%;
+}
+.text p {
+    font-size: 25px;
+}
+.section2 .container input{
+    background: none;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 25px;
+    border: 2px solid black;
+    outline: none;
+    transition: .3s;
+    border-radius: 3px;
+}
+.section2 .container .action{
+    display: flex;
+}
+.section2 .container input:focus{
+    padding: 20px 30px;
+}
+.section2 .container a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+    color: #000;
+    transition: 1s;
+    border-radius: 3px;
+    border: 2px solid black;
+    text-align: center;
+    padding: 15px;
+}
+/* ====================== CARDS ====================== */
+
+.card{
+    height: 500px;
+    width: 392px;
+    background-image: url("../img/1.png");
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    box-shadow: 30px 30px 30px 30px rgba(0,0,0, 0.2);
+}
+.description-card{
+    width: 372px;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.card:hover{
+    opacity: .8;
+    cursor: pointer;
+}

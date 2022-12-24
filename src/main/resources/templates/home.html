@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/home.css" th:href="@{/css/home.css}">
+    <title>Title</title>
+</head>
+<script type="text/javascript" th:src="@{/static/js/script.js}"></script>
+<body>
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-main">
+            <a href="" class="logo">LOGO</a>
+            <a href="" class="menu-header__link">Новинки</a>
+            <a href="" class="menu-header__link">блог</a>
+            <a href="" class="menu-header__link">Скидки</a>
+        </div>
+        <div class="header-actions">
+            <a href="" class="action"><img src="../static/img/heart.png" height="36" width="36"/></a>
+            <a href="" class="action"><img src="../static/img/shopping-cart.png" height="36" width="36" alt=""/></a>
+            <a href="" class="action"><img src="../static/img/user.png" height="36" width="36" alt=""/></a>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="section1">
+        <div class="slider">
+            <div class="slider-line">
+                <div class="slide">
+                    <img src="../static/img/slide1.jpg" height="754" width="1170" alt="slide1"/>
+                    <a class="btn__about-slide">
+                        <svg class="button__svg">
+                            <rect class="button__rect">
+
+                            </rect>
+                        </svg>
+                        About us
+                    </a>
+                </div>
+                <div class="slide">
+                    <img src="../static/img/slide2.jpg" height="754" width="1170" alt="slide2"/>
+                </div>
+            </div>
+            <a class="slider-next" onclick="next()">&#10095</a>
+            <a class="slider-prev" onclick="prev()">&#10094</a>
+        </div>
+    </section>
+
+    <section class="section2">
+        <div class="container">
+            <div class="text">
+                <p>Подпишись на рассылку чтобы не пропустить акции и новинки!</p>
+            </div>
+
+            <form action="">
+                <input type="text" placeholder="EMAIL">
+                <a href="">Подписаться</a>
+            </form>
+        </div>
+    </section>
+
+    <section class="section3">
+        <div class="container">
+            <div class="card">
+                <div class="description-card">
+                    <div class="text-card">
+                        <h3>Черная футболка</h3>
+                        <p>1999 руб.</p>
+                    </div>
+                    <div class="actions-card">
+                        <a href="" class="likes"><img src="../static/img/heart.png" height="36" width="36"/></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="description-card">
+                    <div class="text-card">
+                        <h3>Черная футболка</h3>
+                        <p>1999 руб.</p>
+                    </div>
+                    <div class="actions-card">
+                        <a href="" class="likes"><img src="../static/img/heart.png" height="36" width="36"/></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="description-card">
+                    <div class="text-card">
+                        <h3>Черная футболка</h3>
+                        <p>1999 руб.</p>
+                    </div>
+                    <div class="actions-card">
+                        <a href="" class="likes"><img src="../static/img/heart.png" height="36" width="36"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script>
+        const images = document.querySelectorAll('.slider .slider-line img');
+        const sliderLine = document.querySelector('.slider-line');
+        let count = 0;
+        let width;
+        let timer = 0;
+
+        function init(){
+            console.log('resize');
+            width = document.querySelector('.slider').offsetWidth;
+            sliderLine.style.width = width*images.length + 'px';
+            images.forEach( item => {
+                item.style.width = width + 'px';
+                item.style.height = 'auto';
+            });
+            console.log(width);
+            rollSlider();
+        }
+        window.addEventListener('resize', init);
+        init();
+        function prev(){
+            count--;
+            if (count < 0){
+                count = images.length-1;
+            }
+            rollSlider();
+        }
+        function autoSlider(){
+            timer = setTimeout(next, 10000);
+        }
+        function next(){
+            count++;
+            if (count >= images.length){
+                count = 0;
+            }
+            rollSlider();
+            autoSlider();
+        }
+        function rollSlider(){
+            sliderLine.style.transform = 'translate(-'+count*width +'px)'
+        }
+        autoSlider();
+
+    </script>
+</main>
+</body>
+</html>

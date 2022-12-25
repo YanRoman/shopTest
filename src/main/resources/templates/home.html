@@ -8,6 +8,176 @@
 </head>
 <script type="text/javascript" th:src="@{/static/js/script.js}"></script>
 <body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__row">
+                    <div class="header__main">
+                        <a href="" class="header__logo">LOGO</a>
+                        <a href="" class="header__link">Новинки</a>
+                        <a href="" class="header__link">блог</a>
+                        <a href="" class="header__link">Скидки</a>
+                    </div>
+                    <div class="header__actions">
+                        <a href="" class="header__action">
+                            <img src="../static/img/heart.png" height="34" width="34" alt="heart"/>
+                        </a>
+                        <a href="" class="header__action">
+                            <img src="../static/img/user.png" height="34" width="34" alt="user"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="slider">
+            <div class="slider__line">
+                <div class="slide">
+
+                    <img src="../static/img/slide1.jpg" height="677" width="1150" alt="slide1"/>
+                    <a class="btn__about-slide">
+                        <svg class="button__svg">
+                            <rect class="button__rect"></rect>
+                        </svg>
+                        About us
+                    </a>
+
+                </div>
+                <div class="slide">
+
+                    <img src="../static/img/slide2.jpg" height="677" width="1151" alt="slide2"/>
+
+                </div>
+            </div>
+            <a class="slider__next" onclick="next()">&#10095</a>
+            <a class="slider__prev" onclick="prev()">&#10094</a>
+        </div>
+
+        <div class="subscribe">
+            <div class="container">
+                <div class="subscribe__row">
+                    <div class="text__sub _anim-items">
+                        <p>Подпишись на рассылку чтобы не пропустить акции и новинки!</p>
+                    </div>
+                    <form action="" class="form__sub _anim-items">
+                        <label>
+                            <input type="text" placeholder="EMAIL">
+                        </label>
+                        <button type="button" class="btn__sub">
+                            Подписаться
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="container">
+                <h1 class="goods _anim-items">Лучшие предложения</h1>
+                <div class="cards__row">
+                    <div class="card _anim-items">
+                        <a class="card__img" href=""><img src="../static/img/1.png" height="500" width="392"/></a>
+                        <p class="card__price">100000 руб</p>
+                        <p class="card__text">Чераня футболка</p>
+                    </div>
+
+                    <div class="card _anim-items">
+                        <a class="card__img" href=""><img src="../static/img/1.png" height="500" width="392"/></a>
+                        <p class="card__price">100000 руб</p>
+                        <p class="card__text">Чераня футболка</p>
+                    </div>
+
+                    <div class="card _anim-items">
+                        <a class="card__img" href=""><img src="../static/img/1.png" height="500" width="392"/></a>
+                        <p class="card__price">100000 руб</p>
+                        <p class="card__text">Чераня футболка</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let animItems = document.querySelectorAll('._anim-items');
+    if (animItems.length > 0){
+        window.addEventListener('scroll', animOnScroll);
+        function animOnScroll(){
+            for (let i = 0; i < animItems.length; i++){
+                const animItem = animItems[i];
+                const animItemHeight = animItem.offsetHeight;
+                const animItemOffset = offset(animItem).top;
+                const animStart = 4;
+
+                let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+                if (animItemHeight > window.innerHeight){
+                    animItemPoint = window.innerHeight - window.innerHeight / animStart;
+                }
+
+                if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)){
+                    animItem.classList.add('_active');
+                } else{
+                    animItem.classList.remove('_active');
+                }
+            }
+        }
+
+        function offset(el){
+            const rect = el.getBoundingClientRect(),
+                scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+                scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            return{ top: rect.top + scrollTop, left: rect.left + scrollLeft }
+        }
+
+    }
+</script>
+<script>
+    const images = document.querySelectorAll('.slide img');
+    const sliderLine = document.querySelector('.slider__line');
+    let count = 0;
+    let width;
+    let timer = 0;
+
+    function init(){
+        console.log('resize');
+        width = document.querySelector('.slider').offsetWidth;
+        sliderLine.style.width = width*images.length + 'px';
+        images.forEach( item => {
+            item.style.width = width + 'px';
+            item.style.height = 'auto';
+        });
+        console.log(width);
+        rollSlider();
+    }
+    window.addEventListener('resize', init);
+    init();
+    function prev(){
+        count--;
+        if (count < 0){
+            count = images.length-1;
+        }
+        rollSlider();
+    }
+    function autoSlider(){
+        timer = setTimeout(next, 20000);
+    }
+    function next(){
+        count++;
+        if (count >= images.length){
+            count = 0;
+        }
+        rollSlider();
+        autoSlider();
+    }
+    function rollSlider(){
+        sliderLine.style.transform = 'translate(-'+count*width +'px)'
+    }
+    autoSlider();
+
+</script>
+</html>
+<!-------------------------------HEADER------------------------------->
+<!--
 <header class="header" id="header">
     <div class="container">
         <div class="header-main">
@@ -17,93 +187,135 @@
             <a href="" class="menu-header__link">Скидки</a>
         </div>
         <div class="header-actions">
-            <a href="" class="action"><img src="../static/img/heart.png" height="36" width="36"/></a>
-            <a href="" class="action"><img src="../static/img/shopping-cart.png" height="36" width="36" alt=""/></a>
-            <a href="" class="action"><img src="../static/img/user.png" height="36" width="36" alt=""/></a>
+            <a href="" class="action">
+                <img src="../static/img/heart.png" height="36" width="36" alt="heart"/>
+            </a>
+            <a href="" class="action">
+                <img src="../static/img/shopping-cart.png" height="36" width="36" alt="cart"/>
+            </a>
+            <a href="" class="action">
+                <img src="../static/img/user.png" height="36" width="36" alt="user"/>
+            </a>
         </div>
     </div>
 </header>
+
+&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;MAIN-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
 <main>
-    <section class="section1">
-        <div class="slider">
-            <div class="slider-line">
-                <div class="slide">
-                    <img src="../static/img/slide1.jpg" height="754" width="1170" alt="slide1"/>
-                    <a class="btn__about-slide">
-                        <svg class="button__svg">
-                            <rect class="button__rect">
+    &lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;SECTION-1 (SLIDER)-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
+    <div class="slider">
+        <div class="slider-line">
+            <div class="slide">
 
-                            </rect>
-                        </svg>
-                        About us
-                    </a>
-                </div>
-                <div class="slide">
-                    <img src="../static/img/slide2.jpg" height="754" width="1170" alt="slide2"/>
-                </div>
+                <img src="../static/img/slide1.jpg" height="677" width="1150" alt="slide1"/>
+                <a class="btn__about-slide">
+                    <svg class="button__svg">
+                        <rect class="button__rect"></rect>
+                    </svg>
+                    About us
+                </a>
+
             </div>
-            <a class="slider-next" onclick="next()">&#10095</a>
-            <a class="slider-prev" onclick="prev()">&#10094</a>
-        </div>
-    </section>
+            <div class="slide">
 
-    <section class="section2">
+                <img src="../static/img/slide2.jpg" height="677" width="1151" alt="slide2"/>
+
+            </div>
+        </div>
+        <a class="slider-next" onclick="next()">&#10095</a>
+        <a class="slider-prev" onclick="prev()">&#10094</a>
+    </div>
+    &lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;SECTION-2 (SUBSCRIBE)-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
+    <div class="subscribe">
         <div class="container">
-            <div class="text">
+            <div class="text-sub _anim-items">
                 <p>Подпишись на рассылку чтобы не пропустить акции и новинки!</p>
             </div>
-
-            <form action="">
-                <input type="text" placeholder="EMAIL">
-                <a href="">Подписаться</a>
+            <form action="" class="form-sub _anim-items">
+                <label>
+                    <input type="text" placeholder="EMAIL">
+                </label>
+                <button type="button" class="btn-sub">
+                    Подписаться
+                </button>
             </form>
         </div>
-    </section>
+    </div>
 
-    <section class="section3">
+    &lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;SECTION-3 (CARDS)-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
+    <div class="goods">
+        <h1>Лучшие предложения</h1>
         <div class="container">
-            <div class="card">
-                <div class="description-card">
-                    <div class="text-card">
-                        <h3>Черная футболка</h3>
-                        <p>1999 руб.</p>
+            <div class="cards">
+                <div class="card">
+                    <div class="slider-card">
+                        <div class="slider-card-line">
+                            <a href=""><img src="../static/img/1.png" height="500" width="392"/></a>
+                            <a href=""><img src="../static/img/2.png" height="500" width="392"/></a>
+                        </div>
                     </div>
-                    <div class="actions-card">
-                        <a href="" class="likes"><img src="../static/img/heart.png" height="36" width="36"/></a>
-                    </div>
+                    <span class="setSlide"></span>
+                    <span class="setSlide"></span>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="description-card">
-                    <div class="text-card">
-                        <h3>Черная футболка</h3>
-                        <p>1999 руб.</p>
+                <div class="card">
+                    <div class="slider-card">
+                        <div class="slider-card-line">
+                            <a href=""><img src="../static/img/1.png" height="500" width="392"/></a>
+                            <a href=""><img src="../static/img/2.png" height="500" width="392"/></a>
+                        </div>
                     </div>
-                    <div class="actions-card">
-                        <a href="" class="likes"><img src="../static/img/heart.png" height="36" width="36"/></a>
-                    </div>
+                    <span class="setSlide"></span>
+                    <span class="setSlide"></span>
                 </div>
-            </div>
-
-            <div class="card">
-                <div class="description-card">
-                    <div class="text-card">
-                        <h3>Черная футболка</h3>
-                        <p>1999 руб.</p>
+                <div class="card">
+                    <div class="slider-card">
+                        <div class="slider-card-line">
+                            <a href=""><img src="../static/img/1.png" height="500" width="392"/></a>
+                            <a href=""><img src="../static/img/2.png" height="500" width="392"/></a>
+                        </div>
                     </div>
-                    <div class="actions-card">
-                        <a href="" class="likes"><img src="../static/img/heart.png" height="36" width="36"/></a>
-                    </div>
+                    <span class="setSlide"></span>
+                    <span class="setSlide"></span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
+    <script>
+        let animItems = document.querySelectorAll('._anim-items');
+        if (animItems.length > 0){
+            window.addEventListener('scroll', animOnScroll);
+            function animOnScroll(){
+                for (let i = 0; i < animItems.length; i++){
+                    const animItem = animItems[i];
+                    const animItemHeight = animItem.offsetHeight;
+                    const animItemOffset = offset(animItem).top;
+                    const animStart = 4;
 
+                    let animItemPoint = window.innerHeight - animItemHeight / animStart;
 
+                    if (animItemHeight > window.innerHeight){
+                        animItemPoint = window.innerHeight - window.innerHeight / animStart;
+                    }
 
+                    if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)){
+                        animItem.classList.add('_active');
+                    } else{
+                        animItem.classList.remove('_active');
+                    }
+                }
+            }
 
+            function offset(el){
+                const rect = el.getBoundingClientRect(),
+                    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+                    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                return{ top: rect.top + scrollTop, left: rect.left + scrollLeft }
+            }
+
+        }
+    </script>
     <script>
         const images = document.querySelectorAll('.slider .slider-line img');
         const sliderLine = document.querySelector('.slider-line');
@@ -125,7 +337,7 @@
         window.addEventListener('resize', init);
         init();
         function prev(){
-            count--;
+            count&#45;&#45;;
             if (count < 0){
                 count = images.length-1;
             }
@@ -149,5 +361,9 @@
 
     </script>
 </main>
+
+<footer class="footer">
+
+</footer>
 </body>
-</html>
+</html>-->

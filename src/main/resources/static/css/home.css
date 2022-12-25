@@ -234,3 +234,53 @@ h1{
 .card:hover{
     box-shadow: 0 4px 30px rgba(0,0,0, 0.5);
 }
+
+.footer{
+    background-color: rgb(16,16,16);
+}
+.footer p, .footer h1, .footer a{
+    color: #fff;
+}
+.footer__row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+}
+.social{
+    display: flex;
+}
+.social__icon{
+    background: none;
+    border-radius: 5px;
+    border: 2px solid rgb(30,30,30);
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease .5s;
+}
+i{
+    font-size: 22px;
+    color: rgb(30,30,30);
+    padding: 12px;
+}
+
+.telegram:hover{
+    background-color: #28a4e4;
+}
+.vk:hover{
+    background-color: #0a7cff;
+}
+.instagram:hover{
+    background-color: #833ab4;
+}
+.social__icon:hover i{
+    color: #fff;
+    border: none;
+}

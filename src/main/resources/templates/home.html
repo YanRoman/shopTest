@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../static/css/home.css" th:href="@{/css/home.css}">
+
+    <!--Если иконки не отображаются искать проблему тут-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css}">
     <title>Title</title>
 </head>
 <script type="text/javascript" th:src="@{/static/js/script.js}"></script>
@@ -20,10 +24,11 @@
                     </div>
                     <div class="header__actions">
                         <a href="" class="header__action">
-                            <img src="../static/img/heart.png" height="34" width="34" alt="heart"/>
+
+                            <img th:src="@{/img/heart.png}" height="34" width="34" alt="heart"/>
                         </a>
-                        <a href="" class="header__action">
-                            <img src="../static/img/user.png" height="34" width="34" alt="user"/>
+                        <a href="/registration" class="header__action">
+                            <img th:src="@{/img/user.png}" height="34" width="34" alt="user"/>
                         </a>
                     </div>
                 </div>
@@ -34,7 +39,7 @@
             <div class="slider__line">
                 <div class="slide">
 
-                    <img src="../static/img/slide1.jpg" height="677" width="1150" alt="slide1"/>
+                    <img th:src="@{/img/slide1.jpg}" height="677" width="1150" alt="slide1"/>
                     <a class="btn__about-slide">
                         <svg class="button__svg">
                             <rect class="button__rect"></rect>
@@ -45,7 +50,7 @@
                 </div>
                 <div class="slide">
 
-                    <img src="../static/img/slide2.jpg" height="677" width="1151" alt="slide2"/>
+                    <img th:src="@{/img/slide2.jpg}" height="677" width="1151" alt="slide2"/>
 
                 </div>
             </div>
@@ -76,25 +81,52 @@
                 <h1 class="goods _anim-items">Лучшие предложения</h1>
                 <div class="cards__row">
                     <div class="card _anim-items">
-                        <a class="card__img" href=""><img src="../static/img/1.png" height="500" width="392"/></a>
+                        <a class="card__img" href=""><img th:src="@{/img/1.png}" height="500" width="392"/></a>
                         <p class="card__price">100000 руб</p>
                         <p class="card__text">Чераня футболка</p>
                     </div>
 
                     <div class="card _anim-items">
-                        <a class="card__img" href=""><img src="../static/img/1.png" height="500" width="392"/></a>
+                        <a class="card__img" href=""><img th:src="@{/img/1.png}" height="500" width="392"/></a>
                         <p class="card__price">100000 руб</p>
                         <p class="card__text">Чераня футболка</p>
                     </div>
 
                     <div class="card _anim-items">
-                        <a class="card__img" href=""><img src="../static/img/1.png" height="500" width="392"/></a>
+                        <a class="card__img" href=""><img th:src="@{/img/1.png}" height="500" width="392"/></a>
                         <p class="card__price">100000 руб</p>
                         <p class="card__text">Чераня футболка</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__row">
+                    <div class="info">
+                        <p>Информация</p>
+                        <p>Информация</p>
+                    </div>
+                    <div class="contacts">
+                        <a href="" class="number">8-999-99-99</a>
+                        <a href="" class="email">shop@mail.ru</a>
+                        <div class="social">
+                            <a href="" class="social__icon instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="" class="social__icon telegram">
+                                <i class="fa-brands fa-telegram"></i>
+                            </a>
+                            <a href="" class="social__icon vk">
+                                <i class="fa-brands fa-vk"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 <script>

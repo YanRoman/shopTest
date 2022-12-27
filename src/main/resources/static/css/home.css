@@ -199,16 +199,15 @@ h1{
     padding: 20px 40px;
     text-transform: uppercase;
     position: relative;
-    transition: background-color 0.3s ease 0s;
-    overflow: hidden;
+    transition: all ease 1s;
     color: #ffffff;
     border: 2px solid #fff;
 }
+
 .btn__sub:hover{
     background-color: black;
     color: white;
 }
-
 
 .goods{
     transform: translate(-300px, 0);
@@ -217,24 +216,48 @@ h1{
 .goods._active{
     transform: translate(0, 0);
 }
+.cards{
+    margin: 50px 0;
+}
 .cards__row{
     display: flex;
+}
+/*CARD*/
+.card__info{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 10px;
+}
+.card__text{
+
+}
+.card__text a{
+    font-size: 22px;
+    text-transform: none;
+}
+.card__likes{
+    display: flex;
+}
+.card__heart{
+    padding: 0;
 }
 .card{
     border: 2px solid rgba(225,225,225,0.5);
     padding: 38px;
     opacity: 0;
-    /*transform: translate(400%);*/
     transition: all ease 1s;
 }
 .card._active{
     opacity: 1;
-    /*transform: translate(0);*/
 }
 .card:hover{
     box-shadow: 0 4px 30px rgba(0,0,0, 0.5);
 }
 
+
+
+/*FOOTER*/
 .footer{
     background-color: rgb(16,16,16);
 }
@@ -245,19 +268,35 @@ h1{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 40px;
+    margin: 30px;
 }
-
-.contacts{
+.info{
     display: flex;
     flex-direction: column;
+}
+.info a{
+    margin-right: 10px;
+    color: rgb(30,30,30);
+    font-weight: bold;
+    font-size: 22px;
+    transition: all ease .5s;
+}
+.info a:hover{
+    color: white;
+}
+.info svg{
+    padding: 0;
+    transition: all ease .5s;
+}
+.info a:hover svg{
+    fill: #fff;
 }
 .social{
     display: flex;
 }
 .social__icon{
     background: none;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 2px solid rgb(30,30,30);
     margin-right: 10px;
     display: flex;
@@ -265,10 +304,10 @@ h1{
     justify-content: center;
     transition: all ease .5s;
 }
-i{
+svg{
     font-size: 22px;
-    color: rgb(30,30,30);
-    padding: 12px;
+    fill: rgb(30,30,30);
+    padding: 8px;
 }
 
 .telegram:hover{
@@ -280,7 +319,7 @@ i{
 .instagram:hover{
     background-color: #833ab4;
 }
-.social__icon:hover i{
-    color: #fff;
+.social__icon:hover svg{
+    fill: #fff;
     border: none;
 }

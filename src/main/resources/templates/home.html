@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../static/css/home.css" th:href="@{/css/home.css}">
-
-    <!--Если иконки не отображаются искать проблему тут-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css}">
+    <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
     <title>Title</title>
 </head>
 <script type="text/javascript" th:src="@{/static/js/script.js}"></script>
@@ -18,28 +15,27 @@
                 <div class="header__row">
                     <div class="header__main">
                         <a href="" class="header__logo">LOGO</a>
-                        <a href="" class="header__link">Новинки</a>
-                        <a href="" class="header__link">блог</a>
+                        <a href="" class="header__link">Новости</a>
+                        <a href="" class="header__link">О нашем продукте</a>
                         <a href="" class="header__link">Скидки</a>
                     </div>
                     <div class="header__actions">
                         <a href="" class="header__action">
-
-                            <img th:src="@{/img/heart.png}" height="34" width="34" alt="heart"/>
+                            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Tools -->
+                            <svg class="header__svg" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
                         </a>
                         <a href="/registration" class="header__action">
-                            <img th:src="@{/img/user.png}" height="34" width="34" alt="user"/>
+                            <svg class="header__svg" fill="000000" width="32px" height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="miter"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_iconCarrier"><circle cx="12" cy="6" r="4"></circle><path d="M20,22a7.89,7.89,0,0,0-8-8,7.89,7.89,0,0,0-8,8Z"></path></g></svg>
                         </a>
                     </div>
                 </div>
             </div>
         </header>
-
         <div class="slider">
             <div class="slider__line">
                 <div class="slide">
 
-                    <img th:src="@{/img/slide1.jpg}" height="677" width="1150" alt="slide1"/>
+                    <img th:src="@{img/slide1.jpg}" src="../static/img/slide1.jpg" alt="slide1"/>
                     <a class="btn__about-slide">
                         <svg class="button__svg">
                             <rect class="button__rect"></rect>
@@ -50,7 +46,7 @@
                 </div>
                 <div class="slide">
 
-                    <img th:src="@{/img/slide2.jpg}" height="677" width="1151" alt="slide2"/>
+                    <img th:src="@{/img/slide2.jpg}" src="../static/img/slide2.jpg" alt="slide2"/>
 
                 </div>
             </div>
@@ -82,7 +78,7 @@
                 <div class="cards__row">
                     <div class="card _anim-items">
                         <a class="card__img" href="">
-                            <img th:src="@{/img/1.png}" height="500" width="392"/>
+                            <img th:src="@{img/1.jpg}" src="../static/img/1.jpg" alt="card-photo" height="500" width="392"/>
                         </a>
                         <div class="card__info">
                             <div class="card__text">
@@ -102,7 +98,7 @@
 
                     <div class="card _anim-items">
                         <a class="card__img" href="">
-                            <img th:src="@{/img/1.png}" height="500" width="392"/>
+                            <img th:src="@{img/1.jpg}" src="../static/img/1.jpg" alt="card-photo" height="500" width="392"/>
                         </a>
                         <div class="card__info">
                             <div class="card__text">
@@ -122,7 +118,7 @@
 
                     <div class="card _anim-items">
                         <a class="card__img" href="">
-                            <img th:src="@{/img/1.png}" height="500" width="392"/>
+                            <img th:src="@{img/1.jpg}" src="../static/img/1.jpg" alt="card-photo" height="500" width="392"/>
                         </a>
                         <div class="card__info">
                             <div class="card__text">
@@ -259,194 +255,3 @@
 
 </script>
 </html>
-<!-------------------------------HEADER------------------------------->
-<!--
-<header class="header" id="header">
-    <div class="container">
-        <div class="header-main">
-            <a href="" class="logo">LOGO</a>
-            <a href="" class="menu-header__link">Новинки</a>
-            <a href="" class="menu-header__link">блог</a>
-            <a href="" class="menu-header__link">Скидки</a>
-        </div>
-        <div class="header-actions">
-            <a href="" class="action">
-                <img src="../static/img/heart.png" height="36" width="36" alt="heart"/>
-            </a>
-            <a href="" class="action">
-                <img src="../static/img/shopping-cart.png" height="36" width="36" alt="cart"/>
-            </a>
-            <a href="" class="action">
-                <img src="../static/img/user.png" height="36" width="36" alt="user"/>
-            </a>
-        </div>
-    </div>
-</header>
-
-&lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;MAIN-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
-<main>
-    &lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;SECTION-1 (SLIDER)-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
-    <div class="slider">
-        <div class="slider-line">
-            <div class="slide">
-
-                <img src="../static/img/slide1.jpg" height="677" width="1150" alt="slide1"/>
-                <a class="btn__about-slide">
-                    <svg class="button__svg">
-                        <rect class="button__rect"></rect>
-                    </svg>
-                    About us
-                </a>
-
-            </div>
-            <div class="slide">
-
-                <img src="../static/img/slide2.jpg" height="677" width="1151" alt="slide2"/>
-
-            </div>
-        </div>
-        <a class="slider-next" onclick="next()">&#10095</a>
-        <a class="slider-prev" onclick="prev()">&#10094</a>
-    </div>
-    &lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;SECTION-2 (SUBSCRIBE)-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
-    <div class="subscribe">
-        <div class="container">
-            <div class="text-sub _anim-items">
-                <p>Подпишись на рассылку чтобы не пропустить акции и новинки!</p>
-            </div>
-            <form action="" class="form-sub _anim-items">
-                <label>
-                    <input type="text" placeholder="EMAIL">
-                </label>
-                <button type="button" class="btn-sub">
-                    Подписаться
-                </button>
-            </form>
-        </div>
-    </div>
-
-    &lt;!&ndash;-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;SECTION-3 (CARDS)-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
-    <div class="goods">
-        <h1>Лучшие предложения</h1>
-        <div class="container">
-            <div class="cards">
-                <div class="card">
-                    <div class="slider-card">
-                        <div class="slider-card-line">
-                            <a href=""><img src="../static/img/1.png" height="500" width="392"/></a>
-                            <a href=""><img src="../static/img/2.png" height="500" width="392"/></a>
-                        </div>
-                    </div>
-                    <span class="setSlide"></span>
-                    <span class="setSlide"></span>
-                </div>
-
-                <div class="card">
-                    <div class="slider-card">
-                        <div class="slider-card-line">
-                            <a href=""><img src="../static/img/1.png" height="500" width="392"/></a>
-                            <a href=""><img src="../static/img/2.png" height="500" width="392"/></a>
-                        </div>
-                    </div>
-                    <span class="setSlide"></span>
-                    <span class="setSlide"></span>
-                </div>
-                <div class="card">
-                    <div class="slider-card">
-                        <div class="slider-card-line">
-                            <a href=""><img src="../static/img/1.png" height="500" width="392"/></a>
-                            <a href=""><img src="../static/img/2.png" height="500" width="392"/></a>
-                        </div>
-                    </div>
-                    <span class="setSlide"></span>
-                    <span class="setSlide"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let animItems = document.querySelectorAll('._anim-items');
-        if (animItems.length > 0){
-            window.addEventListener('scroll', animOnScroll);
-            function animOnScroll(){
-                for (let i = 0; i < animItems.length; i++){
-                    const animItem = animItems[i];
-                    const animItemHeight = animItem.offsetHeight;
-                    const animItemOffset = offset(animItem).top;
-                    const animStart = 4;
-
-                    let animItemPoint = window.innerHeight - animItemHeight / animStart;
-
-                    if (animItemHeight > window.innerHeight){
-                        animItemPoint = window.innerHeight - window.innerHeight / animStart;
-                    }
-
-                    if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)){
-                        animItem.classList.add('_active');
-                    } else{
-                        animItem.classList.remove('_active');
-                    }
-                }
-            }
-
-            function offset(el){
-                const rect = el.getBoundingClientRect(),
-                    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-                    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                return{ top: rect.top + scrollTop, left: rect.left + scrollLeft }
-            }
-
-        }
-    </script>
-    <script>
-        const images = document.querySelectorAll('.slider .slider-line img');
-        const sliderLine = document.querySelector('.slider-line');
-        let count = 0;
-        let width;
-        let timer = 0;
-
-        function init(){
-            console.log('resize');
-            width = document.querySelector('.slider').offsetWidth;
-            sliderLine.style.width = width*images.length + 'px';
-            images.forEach( item => {
-                item.style.width = width + 'px';
-                item.style.height = 'auto';
-            });
-            console.log(width);
-            rollSlider();
-        }
-        window.addEventListener('resize', init);
-        init();
-        function prev(){
-            count&#45;&#45;;
-            if (count < 0){
-                count = images.length-1;
-            }
-            rollSlider();
-        }
-        function autoSlider(){
-            timer = setTimeout(next, 10000);
-        }
-        function next(){
-            count++;
-            if (count >= images.length){
-                count = 0;
-            }
-            rollSlider();
-            autoSlider();
-        }
-        function rollSlider(){
-            sliderLine.style.transform = 'translate(-'+count*width +'px)'
-        }
-        autoSlider();
-
-    </script>
-</main>
-
-<footer class="footer">
-
-</footer>
-</body>
-</html>-->

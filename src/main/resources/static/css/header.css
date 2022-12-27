@@ -1,0 +1,35 @@
+/* ====================== HEADER ====================== */
+.header{
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0,0,0, 0.1);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.header__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__main, .header__actions{
+    display: flex;
+    align-items: center;
+}
+.header__logo{
+    padding: 26px 10px;
+}
+.header__link{
+    transition: all ease 1s;
+    padding: 26px 10px;
+}
+.header__action{
+    transition: all ease 1s;
+    padding: 9px 15px;
+}
+.header__link:hover, .header__action:hover{
+    background-color: rgba(199, 196, 196, 0.7);
+}
+.header__svg{
+    fill: black;
+}

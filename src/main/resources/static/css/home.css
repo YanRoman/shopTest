@@ -31,39 +31,6 @@ h1{
     padding: 0 15px;
 }
 
-/* ====================== HEADER ====================== */
-.header{
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0,0,0, 0.1);
-    backdrop-filter: blur(5px);
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-}
-.header__row{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.header__main, .header__actions{
-    display: flex;
-    align-items: center;
-}
-.header__logo{
-    padding: 26px 10px;
-}
-.header__link{
-    transition: all ease 1s;
-    padding: 26px 10px;
-}
-.header__action{
-    transition: all ease 1s;
-    padding: 16px 15px;
-}
-.header__link:hover, .header__action:hover{
-    background-color: rgba(159, 156, 156, 0.9);
-}
-
 /* ====================== SLIDER ====================== */
 .slider{
     width: 100%;
@@ -221,6 +188,8 @@ h1{
 }
 .cards__row{
     display: flex;
+    flex-wrap: wrap;
+    align-self: center;
 }
 /*CARD*/
 .card__info{
@@ -244,7 +213,7 @@ h1{
 }
 .card{
     border: 2px solid rgba(225,225,225,0.5);
-    padding: 38px;
+    padding: 30px;
     opacity: 0;
     transition: all ease 1s;
 }
@@ -276,10 +245,10 @@ h1{
 }
 .info a{
     margin-right: 10px;
-    color: rgb(30,30,30);
     font-weight: bold;
     font-size: 22px;
     transition: all ease .5s;
+    box-shadow: 0 4px 30px rgba(0,0,0, 0.5);
 }
 .info a:hover{
     color: white;
@@ -306,8 +275,9 @@ h1{
 }
 svg{
     font-size: 22px;
-    fill: rgb(30,30,30);
+    fill: white;
     padding: 8px;
+
 }
 
 .telegram:hover{
@@ -320,6 +290,5 @@ svg{
     background-color: #833ab4;
 }
 .social__icon:hover svg{
-    fill: #fff;
     border: none;
 }

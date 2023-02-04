@@ -35,13 +35,13 @@
             <div class="slider__line">
                 <div class="slide">
                     <picture>
-                        <source th:attr="srcset=@{/img/slide1media.jpg}" srcset="../static/img/slide1media.jpg" media="(max-width: 415px)">
+                        <source th:attr="srcset=@{/img/slide1media.jpg}" srcset="../static/img/slide1media.jpg" media="(max-width: 576px)">
                         <img class="resizable default-slide" th:src="@{img/slide1.jpg}" src="../static/img/slide1.jpg" alt="slide1"/>
                     </picture>
                 </div>
                 <div class="slide">
                     <picture>
-                        <source th:attr="srcset=@{/img/slide2media.jpg}" srcset="../static/img/slide2media.jpg" media="(max-width: 415px)">
+                        <source th:attr="srcset=@{/img/slide2media.jpg}" srcset="../static/img/slide2media.jpg" media="(max-width: 576px)">
                         <img class="resizable default-slide" th:src="@{img/slide2.jpg}" src="../static/img/slide2.jpg" alt="slide1"/>
                     </picture>
                 </div>
@@ -250,22 +250,10 @@
     </script>
     <!--===========================================SLIDER==========================================-->
     <script>
-        /*const images = document.querySelectorAll('.resizable-card');
-        const cardsRow = document.querySelector('.cards__row');
-        let width;
-        function init(){
-            width = document.querySelector('.cards').offsetWidth;
-            cardsRow.style.width = width*images.length + 'px';
-            images.forEach(item =>{
-                item.style.width = width + 'px';
-                item.style.height = 'auto';
-            });
-            window.addEventListener('resize', init);
-            init();
-        }*/
-
         const images = document.querySelectorAll('.default-slide');
         const sliderLine = document.querySelector('.slider__line');
+        const sliderNext = document.querySelector('.slider__next');
+        const sliderPrev = document.querySelector('.slider__prev');
         let count = 0;
         let width;
         let timer = 0;
@@ -276,6 +264,13 @@
             images.forEach( item => {
                 item.style.width = width + 'px';
                 item.style.height = 'auto';
+                if (width >= 576){
+                    sliderNext.style.marginTop = "-" + width/3 + "px";
+                    sliderPrev.style.marginTop = "-" + width/3 + "px";
+                } else{
+                    sliderNext.style.marginTop = "-" + width + "px";
+                    sliderPrev.style.marginTop = "-" + width + "px";
+                }
             });
             rollSlider();
         }

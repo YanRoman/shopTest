@@ -6,7 +6,6 @@
 }
 body{
     font-family: 'Rubik', sans-serif;
-    min-width: 1410px;
 }
 a{
     text-decoration: none;
@@ -28,9 +27,9 @@ h1{
     flex-direction: column;
 }
 .container{
-    max-width: 1410px;
     margin: 0 auto;
     padding: 0 15px;
+    max-width: 1400px;
 }
 /* ====================== SLIDER ====================== */
 .slider{
@@ -48,9 +47,8 @@ h1{
 .slider__next, .slider__prev{
     cursor: pointer;
     position: absolute;
-    top: 50%;
     width: auto;
-    margin-top: -22px;
+    margin-top: -622px;
     padding: 16px;
     color: white;
     font-weight: bold;
@@ -147,21 +145,19 @@ h1{
     align-self: center;
 }
 /*CARD*/
-
 .cards-row{
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;X
+    justify-content: space-between;
 }
 .card{
     width: 24%;
-    min-height: 100%;
-    opacity: 0;
-    transition: all .3s ease;
     border-radius: 8px;
     overflow: hidden;
     height: auto;
+    opacity: 0;
+    transition: all .3s ease;
 }
 .card._active{
     opacity: 1;
@@ -221,96 +217,6 @@ h1{
     align-items: center;
     margin: 20px;
 }
-/*
-.card__info{
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    margin: 20px;
-}
-.card__text{
-}
-.card__text a{
-    font-size: 22px;
-    text-transform: none;
-}
-.card__heart{
-    padding: 0;
-}
-.card{
-    opacity: 0;
-    transition: all ease 1s;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 25%;
-}
-.card._active{
-    opacity: 1;
-}
-.card:hover{
-    box-shadow: 0 4px 30px rgba(0,0,0, 0.5);
-}
-
-.card__img{
-    min-height: 500px;
-    width: 100%;
-    display: flex;
-    transition: all .3s ease;
-    background-image: url("../img/1.jpg");
-    background-size: cover;
-}
-.card-slides{
-    position: absolute;
-    width: 392px;
-    height: 500px;
-    z-index: 0;
-    display: flex;
-}
-.card-slide1, .card-slide2{
-    display: block;
-    position: relative;
-    height: 500px;
-    width: 196px;
-    z-index: 1;
-}
-.page{
-    height: 8px;
-    background-color: rgba(255, 255, 255, 0.2);
-    display: block;
-    transition: all .3s ease;
-    opacity: 0;
-    border-radius: 40px;
-    margin-top: 6px;
-}
-.card__img:hover .page{
-    opacity: 1;
-}
-.span-1{
-    margin-left: 4px;
-}
-.span-2 {
-    margin-right: 4px;
-}
-.card-slide1:hover .span-1{
-    background-color: rgba(255, 255, 255, 0.5);
-}
-.card-slide2:hover .span-2{
-    background-color: rgba(255, 255, 255, 0.5);
-
-}
-.resizable-card{
-    transition: all .3s ease;
-}
-.card-1{
-    position: absolute;
-    opacity: 0;
-}
-
-.likes{
-    cursor: pointer;
-}
-*/
-
 
 /*FOOTER*/
 .footer{
@@ -396,17 +302,84 @@ h1{
     fill: red;
 }
 
-@media screen and (max-width: 1280px){
+
+
+
+
+@media screen and (max-width: 1200px){
     .card{
         width: 48%;
     }
     .card-img{
-        height: 1000px;
+        height: 800px;
+    }
+    .container{
+        max-width: 1000px;
+    }
+    .slider__next, .slider__prev{
+        font-size: 40px;
     }
 }
-@media screen and (max-width: 415px){
+@media screen and (max-width: 992px){
+    .container{
+        max-width: 792px;
+    }
+    .slider__next, .slider__prev{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 768px){
+    .container{
+        max-width: 578px;
+    }
+    .slider__next, .slider__prev{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 576px){
+    .container{
+        max-width: 476px;
+    }
+    .slider__next, .slider__prev{
+        font-size: 30px;
+    }
+    p{
+        font-size: 16px;
+    }
+    .ripple__btn{
+        padding: 15px 25px;
+    }
+    .ripple__btn span{
+        font-size: 16px;
+    }
+    a{
+        font-size: 16px;
+    }
+    .subscribe__row{
+        margin: 20px 0;
+    }
+    /*
+    .ripple__btn{
+        padding: 30px 50px;
+    }
+    .ripple__btn span{
+        font-size: 24px;
+    }
+    a{
+        font-size: 24px;
+    }
+    p{
+        font-size: 26px;
+    }
+    .subscribe__row{
+        margin: 25px 0;
+    }*/
+}
+/*@media screen and (max-width: 376px){
+}*/
+/*@media screen and (max-width: 415px){
 
-    /*SUB*/
+    !*SUB*!
     .ripple__btn{
         padding: 30px 50px;
     }
@@ -423,4 +396,4 @@ h1{
         margin: 25px 0;
     }
 
-}
+}*/

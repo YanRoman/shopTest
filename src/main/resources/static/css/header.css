@@ -1,3 +1,4 @@
+
 /* ====================== HEADER ====================== */
 .header{
     background-color: rgba(255, 255, 255, 0.2);
@@ -25,11 +26,14 @@
 }
 .header__action{
     transition: all ease 1s;
-    padding: 9px 15px;
+    padding: 19px 15px;
 }
 .header__link:hover, .header__action:hover{
     background-color: rgba(199, 196, 196, 0.7);
 }
 .header__svg{
     fill: black;
+    padding: 3px;
 }
+
+/* ====================== BUTTON ====================== */

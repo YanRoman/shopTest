@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/login.css}">
+
+  <title>Title</title>
+</head>
+
+<form class="wrapper">
+
+    <div class="form__title">
+      <h1>Вход</h1>
+    </div>
+    <div class="input-data">
+      <input id="login" type="text" required>
+      <div class="underline"></div>
+      <label for="login">Логин</label>
+    </div>
+
+  <div class="input-data">
+    <input id="password" type="password" required>
+    <div class="underline"></div>
+    <label for="password">Пароль</label>
+  </div>
+
+  <a href="" class="log ripple__btn">Войти</a>
+  <a href="/registration" class="reg ripple__btn">Регистрация</a>
+
+  <script>
+    const log = document.querySelector('.log');
+    const reg = document.querySelector('.reg');
+    log.onmousemove = function(e){
+      const x = e.pageX - log.offsetLeft;
+      const y = e.pageY - log.offsetTop;
+      log.style.setProperty('--x', x + 'px')
+      log.style.setProperty('--y', y + 'px')
+    }
+    reg.onmousemove = function(e){
+      const x = e.pageX - reg.offsetLeft;
+      const y = e.pageY - reg.offsetTop;
+      reg.style.setProperty('--x', x + 'px')
+      reg.style.setProperty('--y', y + 'px')
+    }
+  </script>
+
+</form>
+</html>

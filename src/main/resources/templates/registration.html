@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-  <link rel="stylesheet" href="../static/css/registration.css" th:href="@{/css/registration.css}">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/registration.css}">
 
   <title>Title</title>
 </head>
-<body>
-<div class="wrapper">
 
-  <form action="" class="form">
-    <h1 class="form__title">Регистрация</h1>
+<form class="wrapper">
 
-    <div class="form__group">
-      <input type="text" class="form__input">
-      <label class="form__label">Имя</label>
-    </div>
+  <div class="form__title">
+    <h1>Регистрация</h1>
+  </div>
+  <div class="input-data">
+    <input id="login" type="text" required>
+    <div class="underline"></div>
+    <label for="login">Логин</label>
+  </div>
 
-    <div class="form__group">
-      <input type="text" class="form__input">
-      <label class="form__label">пароль</label>
-    </div>
+  <div class="input-data">
+    <input id="password" type="password" required>
+    <div class="underline"></div>
+    <label for="password">Пароль</label>
+  </div>
 
-    <button class="form__button">Зарегестрироваться</button>
-  </form>
-</div>
+  <div class="input-data">
+    <input id="passwordConfirm" type="password" required>
+    <div class="underline"></div>
+    <label for="passwordConfirm">Подтвердите пароль</label>
+  </div>
 
+  <a href="" class="ripple__btn">Регистрация</a>
 
-</body>
+  <script>
+    const btn = document.querySelector('.ripple__btn');
+
+    btn.onmousemove = function(e){
+      const x = e.pageX - btn.offsetLeft;
+      const y = e.pageY - btn.offsetTop;
+      btn.style.setProperty('--x', x + 'px')
+      btn.style.setProperty('--y', y + 'px')
+    }
+  </script>
+
+</form>
 </html>

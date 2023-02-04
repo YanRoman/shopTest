@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,159 +7,172 @@
     <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
     <title>Title</title>
 </head>
-<script type="text/javascript" th:src="@{/static/js/script.js}"></script>
 <body>
     <div class="wrapper">
+        <!----------------------HEADER---------------------->
         <header class="header">
             <div class="container">
                 <div class="header__row">
                     <div class="header__main">
-                        <a href="" class="header__logo">LOGO</a>
-                        <a href="" class="header__link">Новости</a>
-                        <a href="" class="header__link">О нашем продукте</a>
-                        <a href="" class="header__link">Скидки</a>
+                        <a href="" class="header__logo">YANRE</a>
+                        <a href="" class="header__link">О нас</a>
                     </div>
                     <div class="header__actions">
                         <a href="" class="header__action">
-                            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Tools -->
+                            <!--HEART-->
                             <svg class="header__svg" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
                         </a>
-                        <a href="/registration" class="header__action">
+                            <!--ACCOUNT-->
+                        <a href="/login" class="header__action">
                             <svg class="header__svg" fill="000000" width="32px" height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="miter"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_iconCarrier"><circle cx="12" cy="6" r="4"></circle><path d="M20,22a7.89,7.89,0,0,0-8-8,7.89,7.89,0,0,0-8,8Z"></path></g></svg>
                         </a>
                     </div>
                 </div>
             </div>
         </header>
+        <!----------------------SLIDER---------------------->
         <div class="slider">
             <div class="slider__line">
                 <div class="slide">
-
-                    <img th:src="@{img/slide1.jpg}" src="../static/img/slide1.jpg" alt="slide1"/>
-                    <a class="btn__about-slide">
-                        <svg class="button__svg">
-                            <rect class="button__rect"></rect>
-                        </svg>
-                        About us
-                    </a>
-
+                    <picture>
+                        <source th:attr="srcset=@{/img/slide1media.jpg}" srcset="../static/img/slide1media.jpg" media="(max-width: 415px)">
+                        <img class="resizable default-slide" th:src="@{img/slide1.jpg}" src="../static/img/slide1.jpg" alt="slide1"/>
+                    </picture>
                 </div>
                 <div class="slide">
-
-                    <img th:src="@{/img/slide2.jpg}" src="../static/img/slide2.jpg" alt="slide2"/>
-
+                    <picture>
+                        <source th:attr="srcset=@{/img/slide2media.jpg}" srcset="../static/img/slide2media.jpg" media="(max-width: 415px)">
+                        <img class="resizable default-slide" th:src="@{img/slide2.jpg}" src="../static/img/slide2.jpg" alt="slide1"/>
+                    </picture>
                 </div>
             </div>
             <a class="slider__next" onclick="next()">&#10095</a>
             <a class="slider__prev" onclick="prev()">&#10094</a>
         </div>
-
+        <!----------------------SUBSCRIBE---------------------->
         <div class="subscribe">
             <div class="container">
                 <div class="subscribe__row">
                     <div class="text__sub _anim-items">
-                        <p>Подпишись на рассылку чтобы не пропустить акции и новинки!</p>
+                        <p>Подпишись на телеграм чтобы не пропустить новости!</p>
                     </div>
-                    <form action="" class="form__sub _anim-items">
-                        <label>
-                            <input type="text" placeholder="EMAIL">
-                        </label>
-                        <button type="button" class="btn__sub">
-                            Подписаться
-                        </button>
-                    </form>
+                    <a href="" class="ripple__btn btn__sub _anim-items"><span>Подписаться</span></a>
                 </div>
             </div>
         </div>
-
+        <!----------------------CARDS---------------------->
         <div class="cards">
             <div class="container">
-                <h1 class="goods _anim-items">Лучшие предложения</h1>
+                <h1>Популярные</h1>
+                <div class="cards-row">
+                    <div class="card _anim-items">
+                        <a href="#" class="card-img">
+                            <div class="card-slides">
+                                <div class="card-slide1"><span class="page page-1"></span></div>
+                                <div class="card-slide2"><span class="page page-2"></span></div>
+                            </div>
+                        </a>
+                        <div class="card__info">
+                            <a href="#" class="card__name">YANRE футболка</a>
+                            <p class="heart">
+                                <svg class="heart-svg" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card _anim-items">
+                        <a href="#" class="card-img">
+                            <div class="card-slides">
+                                <div class="card-slide1"><span class="page page-1"></span></div>
+                                <div class="card-slide2"><span class="page page-2"></span></div>
+                            </div>
+                        </a>
+                        <div class="card__info">
+                            <a href="#" class="card__name">YANRE футболка</a>
+                            <p class="heart">
+                                <svg class="heart-svg" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card _anim-items">
+                        <a href="#" class="card-img">
+                            <div class="card-slides">
+                                <div class="card-slide1"><span class="page page-1"></span></div>
+                                <div class="card-slide2"><span class="page page-2"></span></div>
+                            </div>
+                        </a>
+                        <div class="card__info">
+                            <a href="#" class="card__name">YANRE футболка</a>
+                            <p class="heart">
+                                <svg class="heart-svg" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card _anim-items">
+                        <a href="#" class="card-img">
+                            <div class="card-slides">
+                                <div class="card-slide1"><span class="page page-1"></span></div>
+                                <div class="card-slide2"><span class="page page-2"></span></div>
+                            </div>
+                        </a>
+                        <div class="card__info">
+                            <a href="#" class="card__name">YANRE футболка</a>
+                            <p class="heart">
+                                <svg class="heart-svg" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!--<div class="cards">
+            <div class="container">
+                <h1 class="goods _anim-items">Популярные</h1>
                 <div class="cards__row">
                     <div class="card _anim-items">
                         <a class="card__img" href="">
-                            <img th:src="@{img/1.jpg}" src="../static/img/1.jpg" alt="card-photo" height="500" width="392"/>
+                            <div class="card-slides">
+                                <div class="card-slide1"><span class="page span-1"></span></div>
+                                <div class="card-slide2"><span class="page span-2"></span></div>
+                            </div>
                         </a>
                         <div class="card__info">
                             <div class="card__text">
                                 <a href="#" class="card__name">Чераня футболка</a>
-                                <a href="#" class="card__price">1000 руб</a>
+                                <a href="#" class="card__price">100000 руб</a>
                             </div>
                             <div class="card__likes">
-                                <p class="card__likes-text">1000</p>
-                                <a href="" class="likes">
-                                    <svg class="card__heart" width="28px" height="28px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5.881C12.981 4.729 14.484 4 16.05 4C18.822 4 21 6.178 21 8.95C21 12.3492 17.945 15.1195 13.3164 19.3167L13.305 19.327L12 20.515L10.695 19.336L10.6595 19.3037C6.04437 15.1098 3 12.3433 3 8.95C3 6.178 5.178 4 7.95 4C9.516 4 11.019 4.729 12 5.881Z" fill="#000000"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card _anim-items">
-                        <a class="card__img" href="">
-                            <img th:src="@{img/1.jpg}" src="../static/img/1.jpg" alt="card-photo" height="500" width="392"/>
-                        </a>
-                        <div class="card__info">
-                            <div class="card__text">
-                                <a href="#" class="card__name">Чераня футболка</a>
-                                <a href="#" class="card__price">1000 руб</a>
-                            </div>
-                            <div class="card__likes">
-                                <p class="card__likes-text">1000</p>
-                                <a href="" class="likes">
-                                    <svg class="card__heart" width="28px" height="28px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5.881C12.981 4.729 14.484 4 16.05 4C18.822 4 21 6.178 21 8.95C21 12.3492 17.945 15.1195 13.3164 19.3167L13.305 19.327L12 20.515L10.695 19.336L10.6595 19.3037C6.04437 15.1098 3 12.3433 3 8.95C3 6.178 5.178 4 7.95 4C9.516 4 11.019 4.729 12 5.881Z" fill="#000000"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card _anim-items">
-                        <a class="card__img" href="">
-                            <img th:src="@{img/1.jpg}" src="../static/img/1.jpg" alt="card-photo" height="500" width="392"/>
-                        </a>
-                        <div class="card__info">
-                            <div class="card__text">
-                                <a href="#" class="card__name">Чераня футболка</a>
-                                <a href="#" class="card__price">1000 руб</a>
-                            </div>
-                            <div class="card__likes">
-                                <p class="card__likes-text">1000</p>
-                                <a href="" class="likes">
-                                    <svg class="card__heart" width="28px" height="28px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 5.881C12.981 4.729 14.484 4 16.05 4C18.822 4 21 6.178 21 8.95C21 12.3492 17.945 15.1195 13.3164 19.3167L13.305 19.327L12 20.515L10.695 19.336L10.6595 19.3037C6.04437 15.1098 3 12.3433 3 8.95C3 6.178 5.178 4 7.95 4C9.516 4 11.019 4.729 12 5.881Z" fill="#000000"/>
-                                    </svg>
-                                </a>
+                                <p class="likes">
+                                    <svg class="heart" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
+        </div>-->
+        <!----------------------FOOTER---------------------->
         <footer class="footer">
             <div class="container">
                 <div class="footer__row">
                     <div class="info">
-                        <a href="" class="number">
-                            <svg width="15px" height="15px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet"><path  d="M34.06 26.407l-3.496-3.496a4.942 4.942 0 0 0-8.34 2.528c-5.765-1.078-11.372-6.662-11.721-11.653a4.908 4.908 0 0 0 2.586-1.36a4.943 4.943 0 0 0 0-6.99L9.594 1.94a4.943 4.943 0 0 0-6.99 0C-7.882 12.426 23.574 43.882 34.06 33.396a4.944 4.944 0 0 0 0-6.989z"></path></svg>
-                            8 (800) 80-80
-                        </a>
                         <a href="" class="email">shop@mail.ru</a>
                     </div>
                     <div class="social">
                         <a href="" class="social__icon telegram">
-                            <svg width="33px" height="33px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="footer__svg" width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M29.919 6.163l-4.225 19.925c-0.319 1.406-1.15 1.756-2.331 1.094l-6.438-4.744-3.106 2.988c-0.344 0.344-0.631 0.631-1.294 0.631l0.463-6.556 11.931-10.781c0.519-0.462-0.113-0.719-0.806-0.256l-14.75 9.288-6.35-1.988c-1.381-0.431-1.406-1.381 0.288-2.044l24.837-9.569c1.15-0.431 2.156 0.256 1.781 2.013z"/>
                             </svg>
                         </a>
                         <a class="social__icon vk">
-                            <svg width="33px" height="33px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.579 6.855c.14-.465 0-.806-.662-.806h-2.193c-.558 0-.813.295-.953.619 0 0-1.115 2.719-2.695 4.482-.51.513-.743.675-1.021.675-.139 0-.341-.162-.341-.627V6.855c0-.558-.161-.806-.626-.806H9.642c-.348 0-.558.258-.558.504 0 .528.79.65.871 2.138v3.228c0 .707-.127.836-.407.836-.743 0-2.551-2.729-3.624-5.853-.209-.607-.42-.852-.98-.852H2.752c-.627 0-.752.295-.752.619 0 .582.743 3.462 3.461 7.271 1.812 2.601 4.363 4.011 6.687 4.011 1.393 0 1.565-.313 1.565-.853v-1.966c0-.626.133-.752.574-.752.324 0 .882.164 2.183 1.417 1.486 1.486 1.732 2.153 2.567 2.153h2.192c.626 0 .939-.313.759-.931-.197-.615-.907-1.51-1.849-2.569-.512-.604-1.277-1.254-1.51-1.579-.325-.419-.231-.604 0-.976.001.001 2.672-3.761 2.95-5.04z"/></svg>
+                            <svg class="footer__svg" width="32px" height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.579 6.855c.14-.465 0-.806-.662-.806h-2.193c-.558 0-.813.295-.953.619 0 0-1.115 2.719-2.695 4.482-.51.513-.743.675-1.021.675-.139 0-.341-.162-.341-.627V6.855c0-.558-.161-.806-.626-.806H9.642c-.348 0-.558.258-.558.504 0 .528.79.65.871 2.138v3.228c0 .707-.127.836-.407.836-.743 0-2.551-2.729-3.624-5.853-.209-.607-.42-.852-.98-.852H2.752c-.627 0-.752.295-.752.619 0 .582.743 3.462 3.461 7.271 1.812 2.601 4.363 4.011 6.687 4.011 1.393 0 1.565-.313 1.565-.853v-1.966c0-.626.133-.752.574-.752.324 0 .882.164 2.183 1.417 1.486 1.486 1.732 2.153 2.567 2.153h2.192c.626 0 .939-.313.759-.931-.197-.615-.907-1.51-1.849-2.569-.512-.604-1.277-1.254-1.51-1.579-.325-.419-.231-.604 0-.976.001.001 2.672-3.761 2.95-5.04z"/></svg>
                         </a>
                         <a href="" class="social__icon instagram">
-                            <svg width="33px" height="33px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="footer__svg" width="32px" height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 
                                 <g id="Instagram">
                                     <g>
@@ -175,83 +188,121 @@
             </div>
         </footer>
     </div>
-</body>
-<script>
-    let animItems = document.querySelectorAll('._anim-items');
-    if (animItems.length > 0){
-        window.addEventListener('scroll', animOnScroll);
-        function animOnScroll(){
-            for (let i = 0; i < animItems.length; i++){
-                const animItem = animItems[i];
-                const animItemHeight = animItem.offsetHeight;
-                const animItemOffset = offset(animItem).top;
-                const animStart = 4;
 
-                let animItemPoint = window.innerHeight - animItemHeight / animStart;
+    <!--===========================================BUTTON==========================================-->
+    <script>
+        const btn = document.querySelector('.ripple__btn');
+        btn.onmousemove = function(e){
+            const x = e.pageX - btn.offsetLeft;
+            const y = e.pageY - btn.offsetTop;
+            btn.style.setProperty('--x', x + 'px')
+            btn.style.setProperty('--y', y + 'px')
+        }
+    </script>
+    <!--===========================================ANIMCARD==========================================-->
+    <script>
+        const slide1 = document.querySelector(".card-slide1");
+        const slide2 = document.querySelector(".card-slide2");
+        const cardImg = document.querySelector(".card-img");
 
-                if (animItemHeight > window.innerHeight){
-                    animItemPoint = window.innerHeight - window.innerHeight / animStart;
-                }
+        slide1.addEventListener("mouseenter", (event) =>{
+            cardImg.style.backgroundImage = 'url("../img/1.jpg")';
+        });
+        slide2.addEventListener("mouseenter", (event) =>{
+            cardImg.style.backgroundImage = 'url("../img/2.jpg")';
+        });
+        slide2.addEventListener("mouseout", (event) =>{
+            cardImg.style.backgroundImage = 'url("../img/1.jpg")';
+        });
+    </script>
+    <!--===========================================ANIMATION==========================================-->
+    <script>
+        let animItems = document.querySelectorAll('._anim-items');
+        if (animItems.length > 0){
+            window.addEventListener('scroll', animOnScroll);
+            function animOnScroll(){
+                for (let i = 0; i < animItems.length; i++){
+                    const animItem = animItems[i];
+                    const animItemHeight = animItem.offsetHeight;
+                    const animItemOffset = offset(animItem).top;
+                    const animStart = 4;
 
-                if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)){
-                    animItem.classList.add('_active');
-                } else{
-                    animItem.classList.remove('_active');
+                    let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+                    if (animItemHeight > window.innerHeight){
+                        animItemPoint = window.innerHeight - window.innerHeight / animStart;
+                    }
+
+                    if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)){
+                        animItem.classList.add('_active');
+                    } else{
+                        animItem.classList.remove('_active');
+                    }
                 }
             }
+            function offset(el){
+                const rect = el.getBoundingClientRect(),
+                    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+                    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                return{ top: rect.top + scrollTop, left: rect.left + scrollLeft }
+            }
         }
+    </script>
+    <!--===========================================SLIDER==========================================-->
+    <script>
+        /*const images = document.querySelectorAll('.resizable-card');
+        const cardsRow = document.querySelector('.cards__row');
+        let width;
+        function init(){
+            width = document.querySelector('.cards').offsetWidth;
+            cardsRow.style.width = width*images.length + 'px';
+            images.forEach(item =>{
+                item.style.width = width + 'px';
+                item.style.height = 'auto';
+            });
+            window.addEventListener('resize', init);
+            init();
+        }*/
 
-        function offset(el){
-            const rect = el.getBoundingClientRect(),
-                scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-                scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            return{ top: rect.top + scrollTop, left: rect.left + scrollLeft }
-        }
+        const images = document.querySelectorAll('.default-slide');
+        const sliderLine = document.querySelector('.slider__line');
+        let count = 0;
+        let width;
+        let timer = 0;
 
-    }
-</script>
-<script>
-    const images = document.querySelectorAll('.slide img');
-    const sliderLine = document.querySelector('.slider__line');
-    let count = 0;
-    let width;
-    let timer = 0;
-
-    function init(){
-        console.log('resize');
-        width = document.querySelector('.slider').offsetWidth;
-        sliderLine.style.width = width*images.length + 'px';
-        images.forEach( item => {
-            item.style.width = width + 'px';
-            item.style.height = 'auto';
-        });
-        console.log(width);
-        rollSlider();
-    }
-    window.addEventListener('resize', init);
-    init();
-    function prev(){
-        count--;
-        if (count < 0){
-            count = images.length-1;
+        function init(){
+            width = document.querySelector('.slider').offsetWidth;
+            sliderLine.style.width = width*images.length + 'px';
+            images.forEach( item => {
+                item.style.width = width + 'px';
+                item.style.height = 'auto';
+            });
+            rollSlider();
         }
-        rollSlider();
-    }
-    function autoSlider(){
-        timer = setTimeout(next, 20000);
-    }
-    function next(){
-        count++;
-        if (count >= images.length){
-            count = 0;
+        window.addEventListener('resize', init);
+        init();
+        function prev(){
+            count--;
+            if (count < 0){
+                count = images.length-1;
+            }
+            rollSlider();
         }
-        rollSlider();
+        function autoSlider(){
+            timer = setTimeout(next, 20000);
+        }
+        function next(){
+            count++;
+            if (count >= images.length){
+                count = 0;
+            }
+            rollSlider();
+            autoSlider();
+        }
+        function rollSlider(){
+            sliderLine.style.transform = 'translate(-'+count*width +'px)'
+        }
         autoSlider();
-    }
-    function rollSlider(){
-        sliderLine.style.transform = 'translate(-'+count*width +'px)'
-    }
-    autoSlider();
-
 </script>
+</body>
 </html>

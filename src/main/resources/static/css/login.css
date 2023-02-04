@@ -79,7 +79,7 @@ body{
 
 
 .ripple__btn{
-    margin: 20px 0;
+    margin: 5px 0;
     position: relative;
     display: inline-flex;
     padding: 20px 40px;
@@ -116,5 +116,7 @@ body{
     width: 400px;
     height: 400px;
 }
-
+.log{
+    margin-top: 20px;
+}
 

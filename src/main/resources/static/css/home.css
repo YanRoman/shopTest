@@ -1,24 +1,28 @@
+:root{
+    --font-size-a: 18px;
+    --font-size-p: 24px;
+}
+/*SVG*/
+.heart-svg:hover{
+    transition: all .3s ease;
+    fill: red;
+    cursor: pointer;
+}
 /* ====================== ALL ====================== */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body{
     font-family: 'Rubik', sans-serif;
+    letter-spacing: 1px;
 }
 a{
     text-decoration: none;
-    text-transform: uppercase;
-    display: block;
-    font-size: 16px;
     color: #000;
+    font-size: var(--font-size-a);
 }
 p{
-    font-size: 22px;
-}
-h1{
-    margin: 30px 0;
+    font-size: var(--font-size-p);
 }
 .wrapper{
     display: flex;
@@ -31,7 +35,60 @@ h1{
     padding: 0 15px;
     max-width: 1400px;
 }
+/* ====================== HEADER ====================== */
+.header__link, .header__logo{
+    text-transform: uppercase;
+}
+.header{
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0,0,0, 0.1);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.header__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__main, .header__actions{
+    display: flex;
+    align-items: center;
+}
+.header__logo{
+    padding: 26px 10px;
+}
+.header__link{
+    transition: all ease 1s;
+    padding: 26px 10px;
+}
+.header__action{
+    transition: all ease 1s;
+    padding: 19px 15px;
+}
+.header__link:hover, .header__action:hover{
+    background-color: rgba(199, 196, 196, 0.7);
+}
+.header__svg{
+    fill: black;
+    padding: 3px;
+}
 /* ====================== SLIDER ====================== */
+.slide-info{
+    position: absolute;
+    z-index: 2;
+    margin-left: 25%;
+    margin-top: -10%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.slide-text{
+    font-size: 80px;
+    font-weight: bold;
+}
 .slider{
     width: 100%;
 }
@@ -56,11 +113,13 @@ h1{
 }
 .slider__next{
     right: 0;
+    color: #000;
 }
 .slide{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 /* ====================== SUBSCRIBE ======================*/
@@ -120,6 +179,8 @@ h1{
     opacity: 1;
 }
 .btn__sub{
+    text-transform: uppercase;
+    font-size: var(--font-size-a);
     transform: translate(500px, 0);
     opacity: 0;
 }
@@ -127,8 +188,15 @@ h1{
     transform: translate(0,0);
     opacity: 1;
 }
-
-/*GOODS*/
+/*==========================================CARDS==========================================*/
+.cards-title{
+    transition: all ease 1s;
+    margin: 20px 0;
+    transform: translate(-500px, 0);
+}
+.cards-title._active{
+    transform: translate(0, 0);
+}
 .goods{
     transform: translate(-300px, 0);
     transition: all ease 1s;
@@ -137,14 +205,18 @@ h1{
     transform: translate(0, 0);
 }
 .cards{
-    margin: 50px 0;
+    margin: 25px 0;
 }
 .cards__row{
     display: flex;
     flex-wrap: wrap;
     align-self: center;
 }
-/*CARD*/
+/*==========================================CARD==========================================*/
+.card__name{
+    border-top: 3px solid black;
+    padding-top: 5px;
+}
 .cards-row{
     padding: 0;
     display: flex;
@@ -158,6 +230,7 @@ h1{
     height: auto;
     opacity: 0;
     transition: all .3s ease;
+    margin-bottom: 5px;
 }
 .card._active{
     opacity: 1;
@@ -166,50 +239,10 @@ h1{
     box-shadow: 0 4px 30px rgba(0,0,0, 0.5);
 }
 .card-img{
-    display: block;
-    height: 500px;
     transition: all .3s ease;
-    background-image: url("../img/1.jpg");
-    background-size: cover;
-    background-position: center center;
 }
-.card-slides{
-    min-height: 100%;
+.card-img img{
     width: 100%;
-    z-index: 0;
-    display: flex;
-}
-.card-slide1, .card-slide2{
-    display: block;
-    position: relative;
-    min-height: 100%;
-    width: 50%;
-    z-index: 1;
-}
-.page{
-    height: 8px;
-    background-color: rgba(255, 255, 255, 0.2);
-    display: block;
-    transition: all .3s ease;
-    opacity: 0;
-    border-radius: 40px;
-    margin-top: 6px;
-}
-.card-img:hover .page{
-    opacity: 1;
-}
-.page-1{
-    margin-left: 4px;
-}
-.page-2 {
-    margin-right: 4px;
-}
-.card-slide1:hover .page-1{
-    background-color: rgba(255, 255, 255, 0.5);
-}
-.card-slide2:hover .page-2{
-    background-color: rgba(255, 255, 255, 0.5);
-
 }
 .card__info{
     display: flex;
@@ -217,12 +250,11 @@ h1{
     align-items: center;
     margin: 20px;
 }
-
 /*FOOTER*/
 .footer{
     background-color: rgb(16,16,16);
 }
-.footer p, .footer h1, .footer a{
+.footer p, .footer a{
     color: #fff;
 }
 .footer__row{
@@ -239,7 +271,6 @@ h1{
     margin-right: 10px;
     font-size: 22px;
     transition: all ease .5s;
-    box-shadow: 0 4px 30px rgba(0,0,0, 0.5);
 }
 .info a:hover{
     color: white;
@@ -297,21 +328,10 @@ h1{
     border: none;
 }
 
-.heart:hover{
-    transition: all .3s ease;
-    fill: red;
-}
-
-
-
-
 
 @media screen and (max-width: 1200px){
     .card{
         width: 48%;
-    }
-    .card-img{
-        height: 800px;
     }
     .container{
         max-width: 1000px;
@@ -336,64 +356,35 @@ h1{
         font-size: 30px;
     }
 }
-@media screen and (max-width: 576px){
-    .container{
+@media screen and (max-width: 576px) {
+    .social__icon{
+        font-size: 16px;
+    }
+    .container {
         max-width: 476px;
     }
-    .slider__next, .slider__prev{
+    .slider__next, .slider__prev {
         font-size: 30px;
     }
-    p{
+    .slider__next{
+        right: 0;
+        color: white;
+    }
+    p {
         font-size: 16px;
     }
-    .ripple__btn{
+    .ripple__btn {
         padding: 15px 25px;
     }
-    .ripple__btn span{
+
+    .ripple__btn span {
         font-size: 16px;
     }
-    a{
+    a {
         font-size: 16px;
     }
-    .subscribe__row{
+
+    .subscribe__row {
         margin: 20px 0;
     }
-    /*
-    .ripple__btn{
-        padding: 30px 50px;
-    }
-    .ripple__btn span{
-        font-size: 24px;
-    }
-    a{
-        font-size: 24px;
-    }
-    p{
-        font-size: 26px;
-    }
-    .subscribe__row{
-        margin: 25px 0;
-    }*/
 }
-/*@media screen and (max-width: 376px){
-}*/
-/*@media screen and (max-width: 415px){
-
-    !*SUB*!
-    .ripple__btn{
-        padding: 30px 50px;
-    }
-    .ripple__btn span{
-        font-size: 24px;
-    }
-    a{
-        font-size: 24px;
-    }
-    p{
-        font-size: 26px;
-    }
-    .subscribe__row{
-        margin: 25px 0;
-    }
-
-}*/

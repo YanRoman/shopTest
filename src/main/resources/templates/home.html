@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../static/css/home.css" th:href="@{/css/home.css}">
-    <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
     <title>Title</title>
 </head>
 <body>
@@ -38,6 +37,11 @@
                         <source th:attr="srcset=@{/img/slide1media.jpg}" srcset="../static/img/slide1media.jpg" media="(max-width: 576px)">
                         <img class="resizable default-slide" th:src="@{img/slide1.jpg}" src="../static/img/slide1.jpg" alt="slide1"/>
                     </picture>
+                    <div class="slide-info">
+                        <p class="slide-text">FIRST DROP</p>
+                        <p class="slide-text">YANRE 1</p>
+                        <a href="" class="ripple__btn slide-link">VIEW</a>
+                    </div>
                 </div>
                 <div class="slide">
                     <picture>
@@ -63,98 +67,23 @@
         <!----------------------CARDS---------------------->
         <div class="cards">
             <div class="container">
-                <h1>Популярные</h1>
+                <h1 class="cards-title _anim-items">Популярные</h1>
                 <div class="cards-row">
-                    <div class="card _anim-items">
-                        <a href="#" class="card-img">
-                            <div class="card-slides">
-                                <div class="card-slide1"><span class="page page-1"></span></div>
-                                <div class="card-slide2"><span class="page page-2"></span></div>
-                            </div>
-                        </a>
-                        <div class="card__info">
-                            <a href="#" class="card__name">YANRE футболка</a>
-                            <p class="heart">
-                                <svg class="heart-svg" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
-                            </p>
-                        </div>
-                    </div>
 
                     <div class="card _anim-items">
                         <a href="#" class="card-img">
-                            <div class="card-slides">
-                                <div class="card-slide1"><span class="page page-1"></span></div>
-                                <div class="card-slide2"><span class="page page-2"></span></div>
-                            </div>
+                            <img th:src="@{/img/1.jpg}" src="../static/img/1.jpg" alt="">
                         </a>
                         <div class="card__info">
-                            <a href="#" class="card__name">YANRE футболка</a>
+                            <a href="#" class="card__name">YANRE 1</a>
                             <p class="heart">
-                                <svg class="heart-svg" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
+                                <svg class="heart-svg" fill="#000000" width="26px" height="26px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
                             </p>
                         </div>
                     </div>
-
-                    <div class="card _anim-items">
-                        <a href="#" class="card-img">
-                            <div class="card-slides">
-                                <div class="card-slide1"><span class="page page-1"></span></div>
-                                <div class="card-slide2"><span class="page page-2"></span></div>
-                            </div>
-                        </a>
-                        <div class="card__info">
-                            <a href="#" class="card__name">YANRE футболка</a>
-                            <p class="heart">
-                                <svg class="heart-svg" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="card _anim-items">
-                        <a href="#" class="card-img">
-                            <div class="card-slides">
-                                <div class="card-slide1"><span class="page page-1"></span></div>
-                                <div class="card-slide2"><span class="page page-2"></span></div>
-                            </div>
-                        </a>
-                        <div class="card__info">
-                            <a href="#" class="card__name">YANRE футболка</a>
-                            <p class="heart">
-                                <svg class="heart-svg" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
-                            </p>
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
         </div>
-        <!--<div class="cards">
-            <div class="container">
-                <h1 class="goods _anim-items">Популярные</h1>
-                <div class="cards__row">
-                    <div class="card _anim-items">
-                        <a class="card__img" href="">
-                            <div class="card-slides">
-                                <div class="card-slide1"><span class="page span-1"></span></div>
-                                <div class="card-slide2"><span class="page span-2"></span></div>
-                            </div>
-                        </a>
-                        <div class="card__info">
-                            <div class="card__text">
-                                <a href="#" class="card__name">Чераня футболка</a>
-                                <a href="#" class="card__price">100000 руб</a>
-                            </div>
-                            <div class="card__likes">
-                                <p class="likes">
-                                    <svg class="heart" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
         <!----------------------FOOTER---------------------->
         <footer class="footer">
             <div class="container">

@@ -10,5 +10,8 @@ public class HomeController {
     public String home(){
         return "home";
     }
-
+    @GetMapping("/saved")
+    public String saved(){return "saved";}
+    @GetMapping("/account")
+    public String account(){return "account";}
 }

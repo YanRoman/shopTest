@@ -18,7 +18,7 @@ public class UserService implements UserDetailsService{
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
-    public User findByUsername(String username){
+    public User findByEmail(String username){
         return userRepository.findByUsername(username);
     }
     public boolean saveUser(User user){
@@ -32,11 +32,6 @@ public class UserService implements UserDetailsService{
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found");
-        }
-
-        return user;
+        return userRepository.findByUsername(username);
     }
 }

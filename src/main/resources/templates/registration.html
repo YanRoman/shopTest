@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/registration.css}">
@@ -7,30 +7,33 @@
   <title>Title</title>
 </head>
 
-<form class="wrapper">
+<!--<div th:if="${message}">
+  <p style="color: red" th:text="${message}"></p>
+</div>-->
 
+<form th:action="@{/registration}" th:object="${user}" method="post" class="wrapper">
   <div class="form__title">
     <h1>Регистрация</h1>
   </div>
   <div class="input-data">
-    <input id="login" type="text" required>
+    <input id="username" name="username" type="text" required>
     <div class="underline"></div>
-    <label for="login">Логин</label>
+    <label for="username">Email</label>
   </div>
 
   <div class="input-data">
-    <input id="password" type="password" required>
+    <input id="password" name="password" type="password" required>
     <div class="underline"></div>
     <label for="password">Пароль</label>
   </div>
 
   <div class="input-data">
-    <input id="passwordConfirm" type="password" required>
+    <input id="passwordConfirm" name="passwordConfirm" type="password" required>
     <div class="underline"></div>
     <label for="passwordConfirm">Подтвердите пароль</label>
   </div>
 
-  <a href="" class="ripple__btn">Регистрация</a>
+  <button type="submit" class="ripple__btn">Зарегистрироваться</button>
 
   <script>
     const btn = document.querySelector('.ripple__btn');

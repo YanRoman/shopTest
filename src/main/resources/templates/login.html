@@ -7,24 +7,23 @@
   <title>Title</title>
 </head>
 
-<form class="wrapper">
-
+<form th:action="@{/login}" method="post" class="wrapper">
     <div class="form__title">
       <h1>Вход</h1>
     </div>
     <div class="input-data">
-      <input id="login" type="text" required>
+      <input id="username" name="username" type="text" required>
       <div class="underline"></div>
-      <label for="login">Логин</label>
+      <label for="username">Email</label>
     </div>
 
   <div class="input-data">
-    <input id="password" type="password" required>
+    <input id="password" name="password" type="password" required>
     <div class="underline"></div>
     <label for="password">Пароль</label>
   </div>
 
-  <a href="" class="log ripple__btn">Войти</a>
+  <button type="submit" class="log ripple__btn">Войти</button>
   <a href="/registration" class="reg ripple__btn">Регистрация</a>
 
   <script>

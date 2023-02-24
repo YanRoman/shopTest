@@ -19,11 +19,11 @@
                     <div class="header__actions">
                         <a href="/saved" class="header__action">
                             <!--HEART-->
-                            <svg class="header__svg" fill="#000000" width="32px" height="32px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
+                            <svg class='header-svg' xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="32" height="32"><path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"/></svg>
                         </a>
                             <!--ACCOUNT-->
                         <a href="/login" class="header__action">
-                            <svg class="header__svg" fill="000000" width="32px" height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="miter"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_iconCarrier"><circle cx="12" cy="6" r="4"></circle><path d="M20,22a7.89,7.89,0,0,0-8-8,7.89,7.89,0,0,0-8,8Z"></path></g></svg>
+                            <svg class="header-svg" xmlns="http://www.w3.org/2000/svg" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="32" height="32"><g><circle cx="256" cy="128" r="128"/><path d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333   c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z"/></g></svg>
                         </a>
                     </div>
                 </div>
@@ -37,18 +37,18 @@
                         <source th:attr="srcset=@{/img/slide1media.jpg}" srcset="../static/img/slide1media.jpg" media="(max-width: 576px)">
                         <img class="resizable default-slide" th:src="@{img/slide1.jpg}" src="../static/img/slide1.jpg" alt="slide1"/>
                     </picture>
-                    <div class="slide-info">
+                    <!--<div class="slide-info">
                         <p class="slide-text">FIRST DROP</p>
                         <p class="slide-text">YANRE 1</p>
                         <a href="" class="ripple__btn slide-link">VIEW</a>
-                    </div>
+                    </div>-->
                 </div>
-                <div class="slide">
+                <!--<div class="slide">
                     <picture>
                         <source th:attr="srcset=@{/img/slide2media.jpg}" srcset="../static/img/slide2media.jpg" media="(max-width: 576px)">
                         <img class="resizable default-slide" th:src="@{img/slide2.jpg}" src="../static/img/slide2.jpg" alt="slide1"/>
                     </picture>
-                </div>
+                </div>-->
             </div>
             <a class="slider__next" onclick="next()">&#10095</a>
             <a class="slider__prev" onclick="prev()">&#10094</a>
@@ -76,11 +76,40 @@
                         </a>
                         <div class="card__info">
                             <a href="#" class="card__name">YANRE 1</a>
-                            <p class="heart">
-                                <svg class="heart-svg" fill="#000000" width="26px" height="26px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M933.619 171.527c120.508 119.575 120.508 313.488-.001 433.065L577.326 958.078c-36.093 35.804-94.559 35.804-130.653-.001L90.381 604.591c-120.508-119.575-120.508-313.488.001-433.065C206.114 56.711 390.89 52.232 511.999 158.09c121.11-105.859 305.885-101.38 421.619 13.437zm-436.043 29.076c-104.451-103.632-273.884-103.632-378.344-.001C14.87 304.156 14.87 471.961 119.231 575.514l356.29 353.484c20.124 19.963 52.835 19.963 72.959.001l356.29-353.484c104.362-103.554 104.362-271.359.001-374.912C800.31 96.97 630.876 96.97 526.426 200.602c-7.985 7.922-20.864 7.922-28.849 0z"/></svg>
-                            </p>
+                            <svg class='like' xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="32" height="32"><path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"/></svg>
                         </div>
                     </div>
+
+                    <div class="card _anim-items">
+                        <a href="#" class="card-img">
+                            <img th:src="@{/img/1.jpg}" src="../static/img/1.jpg" alt="">
+                        </a>
+                        <div class="card__info">
+                            <a href="#" class="card__name">YANRE 1</a>
+                            <svg class='like' xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="32" height="32"><path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="card _anim-items">
+                        <a href="#" class="card-img">
+                            <img th:src="@{/img/1.jpg}" src="../static/img/1.jpg" alt="">
+                        </a>
+                        <div class="card__info">
+                            <a href="#" class="card__name">YANRE 1</a>
+                            <svg class='like' xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="32" height="32"><path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="card _anim-items">
+                        <a href="#" class="card-img">
+                            <img th:src="@{/img/1.jpg}" src="../static/img/1.jpg" alt="">
+                        </a>
+                        <div class="card__info">
+                            <a href="#" class="card__name">YANRE 1</a>
+                            <svg class='like' xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="32" height="32"><path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z"/></svg>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -89,7 +118,7 @@
             <div class="container">
                 <div class="footer__row">
                     <div class="info">
-                        <a href="" class="email">shop@mail.ru</a>
+                        <a href="" class="email">yanroco@mail.ru</a>
                     </div>
                     <div class="social">
                         <a href="" class="social__icon telegram">
@@ -228,5 +257,16 @@
         }
         autoSlider();
 </script>
+
+    <script>
+        const like = document.querySelector('.like');
+        like.addEventListener('click', () =>{
+           if(like.classList.contains('like_active')){
+               like.classList.remove('like_active');
+           } else{
+               like.classList.add('like_active');
+           }
+        });
+    </script>
 </body>
 </html>

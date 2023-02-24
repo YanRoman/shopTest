@@ -2,12 +2,6 @@
     --font-size-a: 18px;
     --font-size-p: 24px;
 }
-/*SVG*/
-.heart-svg:hover{
-    transition: all .3s ease;
-    fill: red;
-    cursor: pointer;
-}
 /* ====================== ALL ====================== */
 *{
     margin: 0;
@@ -65,14 +59,10 @@ p{
 }
 .header__action{
     transition: all ease 1s;
-    padding: 19px 15px;
+    padding: 20px 15px;
 }
 .header__link:hover, .header__action:hover{
     background-color: rgba(199, 196, 196, 0.7);
-}
-.header__svg{
-    fill: black;
-    padding: 3px;
 }
 /* ====================== SLIDER ====================== */
 .slide-info{
@@ -221,7 +211,6 @@ p{
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 .card{
     width: 24%;
@@ -388,3 +377,15 @@ p{
         margin: 20px 0;
     }
 }
+
+
+/*----------SVG-----------*/
+.like{
+    fill: black;
+    cursor: pointer;
+    transition: fill .3s;
+}
+.like.like_active{
+    fill: red;
+}
+
